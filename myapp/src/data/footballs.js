@@ -21,10 +21,6 @@ const footballs = [
     },
     {
       title : 'comcamp',
-      thumbnailUrl :"./picture/comcamp/cc6.JPG",
-    },
-    {
-      title : 'comcamp',
       thumbnailUrl :"./picture/comcamp/cc7.JPG",
     },
     {
@@ -61,11 +57,11 @@ const footballs = [
     },
     {
       title : 'comcamp',
-      thumbnailUrl :"./picture/comcamp/cc16.JPG",
+      thumbnailUrl :"./picture/comcamp/cc16.jpg",
     },
     {
       title : 'comcamp',
-      thumbnailUrl :"./picture/comcamp/cc17.JPG",
+      thumbnailUrl :"./picture/comcamp/cc17.jpg",
     },   {
       title : 'comcamp',
       thumbnailUrl :"./picture/comcamp/cc18.jpg",
