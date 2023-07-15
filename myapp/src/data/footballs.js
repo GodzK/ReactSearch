@@ -81,19 +81,19 @@ const footballs = [
     },
     {
       title : 'comcamp',
-      thumbnailUrl :"./picture/comcamp/cc22.JPG",
+      thumbnailUrl :"./picture/comcamp/cc22.jpg",
     },
     {
       title : 'comcamp',
-      thumbnailUrl :"./picture/comcamp/cc23.JPG",
+      thumbnailUrl :"./picture/comcamp/cc23.jpg",
     },
     {
       title : 'comcamp',
-      thumbnailUrl :"./picture/comcamp/cc24.JPG",
+      thumbnailUrl :"./picture/comcamp/cc24.jpg",
     },
      {
       title : 'cs',
-      thumbnailUrl :"./picture/comcamp/cc24.JPG",
+      thumbnailUrl :"./picture/comcamp/cc24.jpg",
     },
 
     
