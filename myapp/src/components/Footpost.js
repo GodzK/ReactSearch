@@ -1,16 +1,17 @@
 import './Footpost.css';
-function Footpost() {
+function Footpost(props) {
+  const {football , onBgClick} = props;
   return (
     <div className="football-post">
-        <div className="football-post-bg">
+        <div className="football-post-bg" onClick={onBgClick}>
            <div className="football-post-content">
-            <img src="pk2.jpg" />
-            <h4>PK Camp</h4>
+            <img src={football.thumbnailUrl}/>
+            <h4>{football.title}</h4>
            </div>
         </div>
 
     </div>
-  )
+  );
 }
 
 export default Footpost;

@@ -2,6 +2,7 @@ const footballs = [
     {
       title : 'ค่าย',
       thumbnailUrl :"cs.png"
+      
     },
     {
       title : "ค่าย",
