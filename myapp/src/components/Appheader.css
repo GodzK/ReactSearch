@@ -4,7 +4,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 27px;
+    
   }
   .app-header-logo {
    height: 44px;
+   width: 100%;
   }
