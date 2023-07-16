@@ -4,41 +4,46 @@ import Foot from './components/Foot';
 import Footpost from './components/Footpost';
 import Findd from './components/Findd';
 import footballs from './data/footballs';
-import React, { useState } from "react";
-  function App() {
-    const [selectedfootball , setSelectedfootball] = useState(null); 
-    const [searchText , setSearchText] = useState('');
+import React, { useState, useMemo } from "react";
 
-    function onfootballOpenClick(theFootball) {
-      setSelectedfootball(theFootball);
-    }
+function App() {
+  const [selectedfootball, setSelectedfootball] = useState(null);
+  const [searchText, setSearchText] = useState('');
 
-    function onFootballCloseClick() {
-      setSelectedfootball(null);
-    }
-    const filteredfootballs = footballs.filter((football)=>{
+  function onfootballOpenClick(theFootball) {
+    setSelectedfootball(theFootball);
+  }
+
+  function onFootballCloseClick() {
+    setSelectedfootball(null);
+  }
+
+  const filteredfootballs = useMemo(() => {
+    return footballs.filter((football) => {
       return football.title.includes(searchText);
     });
-    const footballcompo = filteredfootballs .map((football , index) => {
-      return <Foot key = {index} football= {football} onfootballOpenClick = {onfootballOpenClick}/>;
+  }, [searchText]);
+
+  const footballcompo = useMemo(() => {
+    return filteredfootballs.map((football, index) => {
+      return <Foot key={index} football={football} onfootballOpenClick={onfootballOpenClick} />;
     });
+  }, [filteredfootballs]);
 
+  let footPost = null;
+  if (!!selectedfootball) {
+    footPost = <Footpost football={selectedfootball} onBgClick={onFootballCloseClick} />;
+  }
 
-     let footPost = null;
-    if (!!selectedfootball) {
-        footPost = <Footpost football={selectedfootball} onBgClick ={onFootballCloseClick}/>
-    }
-     return (
+  return (
     <div className="app">
-  
-      <Appheader/>
-      <Findd value = {searchText} onValueChange={setSearchText}/>
+      <Appheader />
+      <Findd value={searchText} onValueChange={setSearchText} />
       <div className="app-grid">
-      {footballcompo }
+        {footballcompo}
       </div>
       {footPost}
     </div>
-  
   );
 }
 
