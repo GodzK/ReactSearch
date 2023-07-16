@@ -6,6 +6,7 @@ import Findd from './components/Findd';
 import footballs from './data/footballs';
 import React, { useState, useMemo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from './components/Navbar';
 
 function App() {
   // State hooks for selected football and search text
@@ -43,7 +44,8 @@ function App() {
 
   // Render the components
   return (
-    <div className="app">
+    <div className="app bg-dark text-light text-uppercase">
+      <Navbar/>
       <div className='container'>
         <Appheader />
         <div className='p-4'>
