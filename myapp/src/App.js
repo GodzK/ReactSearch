@@ -1,11 +1,15 @@
-import './App.css';
+import React, { useState, useMemo } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from './components/Navbar';
 import Appheader from './components/Appheader'
 import Foot from './components/Foot';
 import Footpost from './components/Footpost';
 import Findd from './components/Findd';
 import footballs from './data/footballs';
-import React, { useState, useMemo } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Pageabout from './components/Pageabout';
+
+
 
 function App() {
   // State hooks for selected football and search text
@@ -43,17 +47,24 @@ function App() {
 
   // Render the components
   return (
-    <div className="app">
-      <div className='container'>
-        <Appheader />
-        <div className='p-4'>
-        <Findd value={searchText} onValueChange={setSearchText} />
-        </div>
-        <div className="row row-cols-4">
-          {footballcompo}
-        </div>
-        {footPost}
-      </div>
+    <div className="app bg-dark text-light text-uppercase">
+        <Navbar />
+  
+            <div className='container'>
+              <Appheader />
+              <div className='p-4'>
+                <Findd value={searchText} onValueChange={setSearchText} />
+              </div>
+              <div className="row row-cols-4">
+                {footballcompo}
+              </div>
+              {footPost}
+            </div>
+   
+ 
+            <Pageabout />
+
+
     </div>
   );
 }
